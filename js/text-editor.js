@@ -1,58 +1,9 @@
 const textElement = document.querySelector('#textarea');
 
+//////////////////// Bold /////////////////////////
 
-// document.getElementById('color').addEventListener('click', function() {
-//     document.querySelector('.text').style.color = 'green';
-// })
-
-// const colorButton = document.getElementById('color');
-
-
-// colorButton.addEventListener('click', function(){
-//     if (textElement.style.color === 'green') {
-//         textElement.style.color = '';
-//     }
-//     else{
-//         textElement.style.color = 'green';
-//     }
-// })
-
-
-// const colors = ['red', 'green', 'blue', 'orange'];
-// let currentColorIndex = 0;
-
-// colorButton.addEventListener('click', function(){
-//     if (currentColorIndex >= colors.length) {
-//         currentColorIndex = 0;
-//     }
-//     textElement.style.color = colors[currentColorIndex];
-//     currentColorIndex++;
-// });
-
-
-
-
-
-// document.getElementById('font-size').addEventListener('click', function(){
-//     document.querySelector('.text').style.fontSize = 'x-large';
-// })
-
-const fontSizeButton = document.getElementById('font-size');
-
-fontSizeButton.addEventListener('click', function(){
-    if (textElement.style.fontSize === "x-large") {
-        textElement.style.fontSize = "";
-    } else {
-        textElement.style.fontSize = "x-large";
-    }
-});
-
-
-// document.getElementById('bold').addEventListener('click', function (){
-//     document.querySelector('.text').style.fontWeight = 'bold';
-// })
 const boldButton = document.getElementById('bold');
-boldButton.addEventListener('click', function(){
+boldButton.addEventListener('click', function () {
     if (textElement.style.fontWeight === "bold") {
         textElement.style.fontWeight = "normal";
     } else {
@@ -60,11 +11,10 @@ boldButton.addEventListener('click', function(){
     }
 });
 
-// document.getElementById('italic').addEventListener('click', function(){
-//     document.querySelector('.text').style.fontStyle = "italic";
-// })
+/////////////////// Italic //////////////////////////
+
 const italicButton = document.getElementById('italic');
-italicButton.addEventListener('click', function(){
+italicButton.addEventListener('click', function () {
     if (textElement.style.fontStyle === "italic") {
         textElement.style.fontStyle = "normal";
     } else {
@@ -72,19 +22,51 @@ italicButton.addEventListener('click', function(){
     }
 });
 
+////////////////// Center ///////////////////////
 
-// document.getElementById('center').addEventListener('click', function(){
-//     document.querySelector('.text').style.textAlign = "center";
-// })
 const centerButton = document.getElementById('center');
-// const textElement = document.querySelector('.text');
-centerButton.addEventListener('click', function(){
+
+centerButton.addEventListener('click', function () {
     if (textElement.style.textAlign === "center") {
         textElement.style.textAlign = "";
     } else {
         textElement.style.textAlign = "center";
     }
 });
+
+////////////////// End ///////////////////////
+
+const endButton = document.getElementById('end');
+
+endButton.addEventListener('click', function () {
+    if (textElement.style.textAlign === "end") {
+        textElement.style.textAlign = "";
+    } else {
+        textElement.style.textAlign = "end";
+    }
+});
+
+/////////////////// Start //////////////////////
+
+const startButton = document.getElementById('start');
+
+startButton.addEventListener('click', function () {
+    if (textElement.style.textAlign === "start") {
+        textElement.style.textAlign = "";
+    } else {
+        textElement.style.textAlign = "start";
+    }
+});
+
+
+////////////////// font size//////////////////////
+
+const range = document.getElementById("myRange");
+const textarea = document.getElementById("textarea");
+range.addEventListener("input", function () {
+    textarea.style.fontSize = this.value + "px";
+});
+
 
 
 ////////////////color/////////////////////////
@@ -95,5 +77,15 @@ colorInput.addEventListener('input', () => {
     let color = colorInput.value;
     // hexInput.value = color;
     document.querySelector('#textarea').style.color = color;
+
+})
+
+/////////////////// clear btn ////////////////////
+
+const clearBtn = document.getElementById("clear");
+clearBtn.addEventListener('click', function () {
+
+    textarea.value = "";
+
 
 })
